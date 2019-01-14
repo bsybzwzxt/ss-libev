@@ -1,8 +1,6 @@
 install ss-libev
 
-wget --no-check-certificate -O shadowsocks-libev.sh https://raw.githubusercontent.com/bsybzwzxt/ss-libev/master/remaster/shadowsocks-libev.sh
-chmod +x shadowsocks-libev.sh
-./shadowsocks-libev.sh 2>&1 | tee shadowsocks-libev.log
+wget --no-check-certificate -O shadowsocks-libev.sh https://raw.githubusercontent.com/bsybzwzxt/ss-libev/master/remaster/shadowsocks-libev.sh && chmod +x shadowsocks-libev.sh && ./shadowsocks-libev.sh 2>&1 | tee shadowsocks-libev.log
 
 order:
 ./shadowsocks-libev.sh uninstall

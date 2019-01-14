@@ -13,10 +13,12 @@ export PATH
 cur_dir=`pwd`
 
 libsodium_file="libsodium-1.0.17"
-libsodium_url="https://github.com/jedisct1/libsodium/releases/download/1.0.17/libsodium-1.0.17.tar.gz"
+#libsodium_url="https://github.com/jedisct1/libsodium/releases/download/1.0.17/libsodium-1.0.17.tar.gz"
+libsodium_url="https://github.com/bsybzwzxt/ss-libev/releases/download/libsodium-1.0.17/libsodium-1.0.17.tar.gz"
 
 mbedtls_file="mbedtls-2.16.0"
-mbedtls_url="https://tls.mbed.org/download/mbedtls-2.16.0-gpl.tgz"
+#mbedtls_url="https://tls.mbed.org/download/mbedtls-2.16.0-gpl.tgz"
+mbedtls_url="https://github.com/bsybzwzxt/ss-libev/releases/download/mbedtls-2.16.0/mbedtls-2.16.0-gpl.tgz"
 
 # Stream Ciphers
 ciphers=(
@@ -82,12 +84,20 @@ get_char(){
     stty $SAVEDSTTY
 }
 
+#get_latest_version(){
+#    ver=$(wget --no-check-certificate -qO- https://api.github.com/repos/shadowsocks/shadowsocks-libev/releases/latest | grep 'tag_name' | cut -d\" -f4)
+#    [ -z ${ver} ] && echo "Error: Get shadowsocks-libev latest version failed" && exit 1
+#    shadowsocks_libev_ver="shadowsocks-libev-$(echo ${ver} | sed -e 's/^[a-zA-Z]//g')"
+#    download_link="https://github.com/shadowsocks/shadowsocks-libev/releases/download/${ver}/${shadowsocks_libev_ver}.tar.gz"
+#    init_script_link="https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-libev"
+#}
+
 get_latest_version(){
-    ver=$(wget --no-check-certificate -qO- https://api.github.com/repos/shadowsocks/shadowsocks-libev/releases/latest | grep 'tag_name' | cut -d\" -f4)
+    ver="v3.2.3"
     [ -z ${ver} ] && echo "Error: Get shadowsocks-libev latest version failed" && exit 1
     shadowsocks_libev_ver="shadowsocks-libev-$(echo ${ver} | sed -e 's/^[a-zA-Z]//g')"
-    download_link="https://github.com/shadowsocks/shadowsocks-libev/releases/download/${ver}/${shadowsocks_libev_ver}.tar.gz"
-    init_script_link="https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-libev"
+    download_link="https://github.com/bsybzwzxt/ss-libev/releases/download/shadowsocks-libev-3.2.3/shadowsocks-libev-3.2.3.tar.gz"
+    init_script_link="https://raw.githubusercontent.com/bsybzwzxt/ss-libev/master/remaster/script"
 }
 
 check_installed(){

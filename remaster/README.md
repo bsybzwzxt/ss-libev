@@ -1,6 +1,6 @@
 install ss-libev
 
-wget --no-check-certificate -O shadowsocks-libev.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-libev.sh
+wget --no-check-certificate -O shadowsocks-libev.sh https://raw.githubusercontent.com/bsybzwzxt/ss-libev/master/remaster/shadowsocks-libev.sh
 chmod +x shadowsocks-libev.sh
 ./shadowsocks-libev.sh 2>&1 | tee shadowsocks-libev.log
 
@@ -12,9 +12,10 @@ order:
 
 install google bbr
 
-wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && ./bbr.sh
+wget --no-check-certificate https://raw.githubusercontent.com/bsybzwzxt/ss-libev/master/remaster/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 check:
 uname -r
+
 
 mkdir /root/udpspeeder
 cd /root/udpspeeder
